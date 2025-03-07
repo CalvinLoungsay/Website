@@ -1,0 +1,37 @@
+/* Small Phones */
+@media (max-width: 319px) {
+    * {font-size: 10px;}
+    input[type="checkbox"] {
+        height:15px;
+        width:15px;
+    }
+}
+
+/* Regular Phones */
+@media (min-width: 320px) and (max-width: 549px) {
+    * {font-size: 12px;}
+    input[type="checkbox"] {
+        height:20px;
+        width:20px;
+    }
+}
+
+/* Ipads or small screen sizes */
+@media (min-width:550px) and (max-width: 767px) {
+    * {font-size: 14px;}
+    input[type="checkbox"] {
+        height:20px;
+        width:20px;
+    }
+}
+
+/* Medium Screen Size */
+@media (min-width:768px) and ( max-width: 992px) {
+    * {font-size: 16px;}
+}
+
+
+/* Large Screen Size */
+@media (min-width: 993px) {
+    * {font-size: 18px;}
+} 

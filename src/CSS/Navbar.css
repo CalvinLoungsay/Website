@@ -1,0 +1,44 @@
+/* Navbar CSS */
+.collapseBtn {
+    background:white;
+}
+
+.navBrand {
+    margin-left: 2em;
+    margin-bottom:.25em;
+    margin-top:.25em;
+}
+
+.navBrandText {
+    color:white;
+}
+
+.navBrandText:hover {
+    color:aquamarine;
+}
+
+.navColour {
+    background:rgb(150, 150, 150);
+}
+
+.navComponent {
+    font-size: 1.1em
+}
+
+.nav-link {
+    color:azure;
+}
+
+.nav-link:hover {
+    color:rgb(240, 71, 71);
+    background:rgb(226, 226, 226);
+}
+
+.nav-link.active {
+    color: #0fddb0 !important;
+}
+
+.navLinkItem {
+    padding:.3em;
+    font-size:1em;
+}
