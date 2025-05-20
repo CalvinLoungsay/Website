@@ -1,0 +1,119 @@
+/* Todo List CSS */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.todoContainer {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: rgba(226, 226, 226);
+    border-radius: 16px;
+    box-shadow: 1px 3px 4px rgb(0, 0, 0);
+    padding: 30px;
+}
+
+/* Headers */
+.todoHeader,
+.listHeader {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* New Todo Form */
+.new-item-form {
+    margin-bottom: 30px;
+}
+
+.newTodoField {
+    padding: 12px 16px;
+    width: 300px;
+    max-width: 80vw;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.newTodoField:focus {
+    outline: none;
+    border-color: rgb(82, 159, 231);
+    box-shadow: 0 0 0 3px rgba(92, 157, 237, 0.2);
+}
+
+/* Add Button */
+.addBtn {
+    padding: 10px 20px;
+    background-color: #5c9ded;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    align-self:center;
+}
+
+.addBtn:hover {
+    background-color: #4a8ad4;
+}
+
+.addBtnText {
+    margin: 0px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 410px) {
+    .addBtn {
+        margin-top:25px;
+    }
+    
+    .addBtnText {
+        font-size:1.7rem;
+    }
+}
+
+
+/* Todo Item */
+.todoName {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+}
+
+.todoList {
+    padding: 0 0px;
+}
+
+.deleteBtn {
+    padding: 8px 14px;
+    background-color: rgb(228, 58, 58);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.deleteBtn:hover {
+    background-color: rgb(243, 61, 61);
+}
+
+.deleteText {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Completed Todo Styling */
+.todoCheck:checked ~ .todoName {
+    text-decoration: line-through;
+    color: #999;
+}

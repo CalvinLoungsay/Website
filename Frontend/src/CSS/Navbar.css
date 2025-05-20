@@ -1,0 +1,86 @@
+/* Navbar CSS */
+.collapseBtn {
+    background: white;
+}
+
+.navBrand {
+    margin-left: 1rem;
+    margin-bottom: .25rem;
+    margin-top: .25rem;
+}
+
+.navBrandText {
+    color: white;
+}
+
+.navBrandText:hover {
+    color: aquamarine;
+    transition: color 0.4s ease;
+}
+
+.navColour {
+    background: rgb(63, 63, 63);
+}
+
+.navComponent {
+    font-size: 1rem
+}
+
+.nav-link {
+    color: azure;
+}
+
+.nav-link:hover {
+    .navLinkItem {
+        color: rgb(255, 255, 255);
+        transition: color 0.4s ease;
+    }
+}
+
+.navLinkItem {
+    padding: .3rem;
+    font-size: 1.1rem;
+    color: rgb(200, 200, 200)
+}
+
+.fixOffset {
+    margin-bottom: 5%;
+}
+
+@media (min-width:993px) and (max-width:1300px) {
+    .fixOffset {
+        margin-bottom: 7%;
+    }
+}
+
+/* Medium Screen Size */
+@media (min-width:768px) and (max-width: 992px) {
+    .fixOffset {
+        margin-bottom: 7%;
+    }
+}
+
+/* Ipads or small screen sizes */
+@media (min-width:481px) and (max-width: 767px) {
+    .fixOffset {
+        margin-bottom: 15%;
+    }
+
+    .navLinkItem {
+        padding: .2rem;
+        font-size: .9rem;
+    }
+}
+
+/* Portrait mode phones*/
+@media (max-width:480px) {
+    .fixOffset {
+        margin-bottom: 20%;
+    }
+
+    .navLinkItem {
+        padding: .1rem;
+        font-size: .7rem;
+        color: rgb(200, 200, 200)
+    }
+}

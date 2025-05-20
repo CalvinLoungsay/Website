@@ -1,0 +1,129 @@
+/* News Container CSS */
+
+.homeContainer {
+    margin-top: 5%;
+}
+
+.rowContainer {
+    margin-left: 15%;
+    margin-right: 2%;
+}
+
+.newsContainer {
+    margin-left: 7%;
+}
+
+.newsItem {
+    padding: 2%;
+    margin-bottom: 3%;
+    background-color: rgb(226, 226, 226);
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.title {
+    margin: 5px;
+    font-size: 1.2rem;
+}
+
+.desc {
+    margin: 5px;
+    font-size: 1rem;
+}
+
+.newsHeader {
+    color: White;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: rgb(133, 133, 133);
+    border: 1.5px solid black;
+    border-radius: 10px;
+}
+
+/* Change Log CSS */
+
+.changelogContainer {
+    padding: 10px;
+}
+
+.changelogItem {
+    background-color: white;
+    margin: 5%;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+.changeTitle {
+    text-align: center;
+    font-size: 1.2rem;
+    border-bottom: 2px solid black;
+    border-radius: 4px;
+}
+
+.newChangeTitle {
+    margin-left: 10px;
+    margin-bottom: 0px;
+    font-size: 1rem;
+}
+
+.newChangeDesc {
+    margin-left: 10px;
+    font-size: .8rem;
+    max-height: 10%;
+    padding: 5px;
+}
+
+/* Medium Screen Size */
+@media (min-width:768px) and (max-width: 992px) {
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .desc {
+        font-size: .9rem;
+    }
+
+    .changelogItem {
+        margin: 0px;
+    }
+
+    .newsContainer {
+        margin-left: 0px;
+    }
+
+    .newChangeTitle {
+        font-size: 1rem;
+    }
+
+    .newChangeDesc {
+        font-size: .8rem;
+    }
+}
+
+/* Ipads or small screen sizes */
+@media (max-width: 767px) {
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .desc {
+        font-size: .7rem;
+    }
+
+    .changelogItem {
+        margin: 0px;
+    }
+
+    .newsContainer {
+        margin-left: 0px;
+    }
+
+    .newChangeTitle {
+        font-size: 1rem;
+    }
+
+    .newChangeDesc {
+        font-size: .8rem;
+    }
+}
