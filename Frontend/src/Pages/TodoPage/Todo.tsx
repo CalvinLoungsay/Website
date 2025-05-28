@@ -24,14 +24,14 @@ export const TodoComp = (props: TodoProps) => {
 
     return (<>
         <Row className="mx-2 my-1 justify-content-center">
-            <Col className="d-flex justify-content-end align-items-center" xs ={1} sm={1} lg={1}>
+            <Col className="d-flex justify-content-end align-items-center" xs={1} sm={1} lg={1}>
                 <Form.Check checked={props.todo.completed} onChange={e => props.toggleCheck(props.todo.id, e.target.checked)} className="d-flex todoCheck"></Form.Check>
             </Col>
             <Col className="d-flex align-items-center" xs={9} sm={7} lg={7}>
-                {<h1 className = "todoName">{props.todo.title}</h1>}
+                <h1 className="todoName">{props.todo.title}</h1>
             </Col>
-            <Col className="d-flex align-items-center" xs={2}sm={2} lg={2}>
-                <button onClick={() => props.deleteTodo(props.todo.id)} className = "deleteBtn"><h5 className="deleteText">Delete</h5></button>
+            <Col className="d-flex align-items-center" xs={2} sm={2} lg={2}>
+                <button onClick={() => props.deleteTodo(props.todo.id)} className="deleteBtn"><h5 className="deleteText">Delete</h5></button>
             </Col>
         </Row>
     </>

@@ -3,14 +3,14 @@ import { Navbar, Nav } from "react-bootstrap"
 import "../CSS/Navbar.css"
 
 
-export function NavbarComponent() {
+export function NavbarComp() {
 
     let location = useLocation()
 
     return (<>
-        <Navbar fixed="top" expand="lg" className="navColour py-0">
+        <Navbar sticky="top" expand="md" className="navColour py-0">
             <Navbar.Brand className="navBrand" href="/"><h5 className="navBrandText">Calvin Loungsay</h5></Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" className="mx-2 collapseBtn" />
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" className="mx-2 collapseBtn" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="justify-content-end flex-grow-1 navComponent" activeKey={location.pathname}>
                     <Nav.Link href="/" className="NavLinkContainer"><h5 className="navLinkItem">Home</h5></Nav.Link>

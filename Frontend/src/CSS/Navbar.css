@@ -1,6 +1,7 @@
 /* Navbar CSS */
 .collapseBtn {
-    background: white;
+    background-color:rgb(211, 211, 211) !important;
+    border: 1.5px solid rgb(104, 104, 104) !important;
 }
 
 .navBrand {
@@ -40,33 +41,18 @@
 .navLinkItem {
     padding: .3rem;
     font-size: 1.1rem;
-    color: rgb(200, 200, 200)
+    margin-left:10px;
+    color: rgb(200, 200, 200);
 }
 
 .fixOffset {
-    margin-bottom: 5%;
+    margin-bottom: 10px;
 }
 
-@media (min-width:993px) and (max-width:1300px) {
-    .fixOffset {
-        margin-bottom: 7%;
-    }
-}
-
-/* Medium Screen Size */
-@media (min-width:768px) and (max-width: 992px) {
-    .fixOffset {
-        margin-bottom: 7%;
-    }
-}
 
 /* Ipads or small screen sizes */
 @media (min-width:481px) and (max-width: 767px) {
-    .fixOffset {
-        margin-bottom: 15%;
-    }
-
-    .navLinkItem {
+  .navLinkItem {
         padding: .2rem;
         font-size: .9rem;
     }
@@ -74,13 +60,11 @@
 
 /* Portrait mode phones*/
 @media (max-width:480px) {
-    .fixOffset {
-        margin-bottom: 20%;
+    .navBrandText {
+        font-size:1rem;
     }
-
     .navLinkItem {
         padding: .1rem;
         font-size: .7rem;
-        color: rgb(200, 200, 200)
     }
 }

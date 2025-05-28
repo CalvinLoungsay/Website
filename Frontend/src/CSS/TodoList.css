@@ -1,10 +1,4 @@
 /* Todo List CSS */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
 
 .todoContainer {
     max-width: 800px;
@@ -110,10 +104,4 @@ body {
     margin: 0;
     font-size: 0.9rem;
     font-weight: 500;
-}
-
-/* Completed Todo Styling */
-.todoCheck:checked ~ .todoName {
-    text-decoration: line-through;
-    color: #999;
 }
