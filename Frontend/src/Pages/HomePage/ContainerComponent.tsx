@@ -1,4 +1,4 @@
-import { Row, Col, Form } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import "../../CSS/Home.css"
 import TruncateMarkup from 'react-truncate-markup'
 
