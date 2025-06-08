@@ -1,5 +1,5 @@
-import express, { RequestHandler, Request, Response } from 'express';
-import { deleteUserById, getUserById, getUsers } from '../db/users';
+import { RequestHandler, Request, Response } from 'express';
+import { deleteUserById, getUserById, getUsers, getUserByEmail } from '../db/users';
 
 /* Gets all user from the database */
 export const getAllUsers: RequestHandler = async (req: Request, res: Response) => {
@@ -7,7 +7,7 @@ export const getAllUsers: RequestHandler = async (req: Request, res: Response) =
         const users = await getUsers();
 
         res.status(200).json(users);
-    /* Catch errors and log the error */
+        /* Catch errors and log the error */
     } catch (error) {
         console.log(error);
         res.sendStatus(400);
@@ -26,7 +26,7 @@ export const deleteUser: RequestHandler = async (req: Request, res: Response) =>
 
         res.json(deletedUser);
         return;
-    /* Catch errors and log the error */
+        /* Catch errors and log the error */
     } catch (error) {
         console.log(error);
         res.sendStatus(400);
@@ -53,7 +53,29 @@ export const updateUser = async (req: Request, res: Response) => {
         await user.save();
         res.status(200).json(user);
         return;
-    /* Catch errors and log the error */
+        /* Catch errors and log the error */
+    } catch (error) {
+        console.log(error);
+        res.sendStatus(400);
+        return;
+    }
+}
+
+/* Gets a single user by using their email */
+export const getUser = async (req: Request, res: Response) => {
+    try {
+        /* Gets email from request params */
+        const { email } = req.params;
+        const user = await getUserByEmail(email);
+
+        /* If user does not exist return an error */
+        if (!user) {
+            res.status(400).json({message: "User not found"});
+            return;
+        }
+        res.status(200).json(user);
+        return;
+        /* Catch errors and log the error */
     } catch (error) {
         console.log(error);
         res.sendStatus(400);

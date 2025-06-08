@@ -21,6 +21,7 @@ export function TodoListPage() {
 
     return JSON.parse(localValue)
   })
+
   /* Use state that holds the array list of the todos in browser*/
   const [todos, setTodos] = useState<Todo[]>(() => {
     const localValue = localStorage.getItem("ITEMS")
@@ -63,7 +64,7 @@ export function TodoListPage() {
 
   return (<>
     {/* Container holding the entire todo list page4 */}
-    <Container className="todoContainer">
+    <Container className="todoContainer" bsPrefix="todoContainer">
       {/* Add Todo component */}
       <Row className="mx-5">
         <Col className="d-flex justify-content-center">

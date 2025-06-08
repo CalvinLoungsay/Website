@@ -12,7 +12,7 @@ const app = express();
 const PORT: number = 5000;
 
 /* Url for the mongo db used for the backend */
-const MONGO_URL = "DBCONNECTIONSTRING";
+const MONGO_URL = "MONGODB URL";
 
 /* Enables Cors */
 app.use(cors({
@@ -34,13 +34,13 @@ mongoose.connect(MONGO_URL);
 mongoose.connection.on('error', (error: Error) => console.log(error));
 
 /* Status route to get the status of the server */
-// app.get('/status', (req: Request, res: Response) => {
-//   const status = {
-//     "Status": "Running"
-//   };
+app.get('/status', (req: Request, res: Response) => {
+  const status = {
+    "Status": "Running"
+  };
 
-//   res.json(status);
-// });
+  res.json(status);
+});
 
 /* Creates server to listen on given localhost port */
 server.listen(PORT, () => {

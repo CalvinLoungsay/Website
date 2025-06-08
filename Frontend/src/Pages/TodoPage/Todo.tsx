@@ -23,11 +23,11 @@ interface TodoProps {
 export const TodoComp = (props: TodoProps) => {
 
     return (<>
-        <Row className="mx-2 my-1 justify-content-center">
+        <Row className="my-1 justify-content-center">
             <Col className="d-flex justify-content-end align-items-center" xs={1} sm={1} lg={1}>
-                <Form.Check checked={props.todo.completed} onChange={e => props.toggleCheck(props.todo.id, e.target.checked)} className="d-flex todoCheck"></Form.Check>
+                <Form.Check checked={props.todo.completed} onChange={e => props.toggleCheck(props.todo.id, e.target.checked)} className="d-flex todoCheck" bsPrefix="todoCheck"></Form.Check>
             </Col>
-            <Col className="d-flex align-items-center" xs={9} sm={7} lg={7}>
+            <Col className="d-flex fluid align-items-center" xs={7} sm={7} lg={7}>
                 <h1 className="todoName">{props.todo.title}</h1>
             </Col>
             <Col className="d-flex align-items-center" xs={2} sm={2} lg={2}>

@@ -1,0 +1,96 @@
+/* Login and Register shared CSS */
+.loginCol {
+    margin: 0 30% 0 30%;
+}
+
+.emailField {
+    margin-bottom: 2%;
+}
+
+.passField {
+    margin-bottom: 5%;
+}
+
+.authBtnContainer {
+    padding: 0 30% 0 30%;
+}
+
+.loginBtn {
+    background-color: rgb(0, 104, 202);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    margin: 5% 0 10% 0;
+}
+
+.registerBtn {
+    background-color: rgb(209, 124, 26);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    margin: 2% 0 10% 0;
+}
+
+.titleText {
+    color: white;
+    text-shadow:
+        2px 2px 0 #000,
+        -1px 1px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000;
+}
+
+.authBtnText {
+    text-align:center;
+}
+
+.errorMessage {
+    font-size: 1rem;
+    color: rgb(248, 73, 73);
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+/* Shaking animation for when error message appears to make it more visible user entered something wrong */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+
+/* Regular Phones */
+@media (min-width: 320px) and (max-width: 549px) {}
+
+/* Ipads or small screen sizes */
+@media (min-width:550px) and (max-width: 767px) {}
+
+/* Medium Screen Size */
+@media (min-width:768px) and (max-width: 992px) {}
+
+/* Large Screen Size */
+@media (min-width: 993px) {
+    .loginCol {
+        margin: 2% 40% 0 40%;
+    }
+}

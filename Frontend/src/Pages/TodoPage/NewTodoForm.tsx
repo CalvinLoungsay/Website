@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Form, Button } from 'react-bootstrap'
 
 /* Prop holding the function to add a todo from the TodoListPage */
 interface TodoFormProp {
@@ -24,25 +24,29 @@ export function NewTodoForm({ addTodo }: TodoFormProp) {
     }
 
     return (<>
-        <form
-            onSubmit={handleSubmit}
-            className="new-item-form justify-content-center d-flex">
+        <Form onSubmit={handleSubmit} className="new-item-form justify-content-center d-flex">
             <Row>
                 <Col className="d-flex justify-content-center">
-                {/* Value - New todo object
-                    onChange - On click create a new todo with the value in the textbox */}
-                    <input
+                    {/* Value - New todo object
+                        onChange - On click create a new todo with the value in the textbox */}
+                    <Form.Control
                         value={newItem}
                         onChange={e => setNewItem(e.target.value)}
                         type="text"
-                        id="item"
-                        className="newTodoField" />
+                        id="newTodoField"
+                        placeholder="Enter Todo"
+                        className="newTodoField"
+                        bsPrefix="newTodoField"
+                    />
                 </Col>
                 <Col className="d-flex justify-content-center">
-                    <button type="submit" className="addBtn"><h5 className="addBtnText">Add</h5></button>
+                    <Button type="submit" className="addBtn" bsPrefix="addBtn">
+                        <h5 className="addBtnText">Add</h5>
+                    </Button>
                 </Col>
             </Row>
-        </form>
+        </Form>
+
     </>
     )
 }

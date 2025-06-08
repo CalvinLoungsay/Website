@@ -1,7 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import "../../CSS/About.css"
-
-
+/* About page Component */
 export function AboutPage() {
     return (<>
         <Container fluid className="homeContainer">

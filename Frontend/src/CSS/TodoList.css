@@ -50,7 +50,7 @@
     color: white;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    align-self:center;
+    align-self: center;
 }
 
 .addBtn:hover {
@@ -62,17 +62,6 @@
     font-size: 1rem;
     font-weight: 500;
 }
-
-@media (max-width: 410px) {
-    .addBtn {
-        margin-top:25px;
-    }
-    
-    .addBtnText {
-        font-size:1.7rem;
-    }
-}
-
 
 /* Todo Item */
 .todoName {
@@ -105,3 +94,56 @@
     font-size: 0.9rem;
     font-weight: 500;
 }
+
+/* Small Phones */
+@media (min-width: 320px) and (max-width: 549px) {
+    .todoContainer {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .todoName {
+        font-size: .9rem;
+    }
+
+    @media (max-width:420px) {
+        .addBtn {
+            margin-top: 25px;
+        }
+
+        .addBtnText {
+            font-size: 1.3rem;
+        }
+
+        .todoName {
+            font-size: .75rem;
+        }
+
+        .deleteText {
+            font-size: .55rem;
+        }
+    }
+}
+
+/* Ipads or small screen sizes */
+@media (min-width:550px) and (max-width: 767px) {
+    .todoContainer {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .todoName {
+        font-size: .8rem;
+    }
+
+    .deleteText {
+        font-size: .55rem;
+    }
+}
+
+/* Medium Screen Size */
+@media (min-width:768px) and (max-width: 992px) {}
+
+
+/* Large Screen Size */
+@media (min-width: 993px) {}

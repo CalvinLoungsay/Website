@@ -1,9 +1,9 @@
 import { Row, Col } from 'react-bootstrap'
 import "../../CSS/Home.css"
-import TruncateMarkup from 'react-truncate-markup'
+import TextTruncate from 'react-text-truncate'
 
 interface ContainerProps {
-    s: number
+    xs: number
     md: number
     title: string
     desc: string
@@ -11,16 +11,23 @@ interface ContainerProps {
     clName: string
 }
 
-/* Todo Component */
+/* Container Component mainly to hold text with a title and desc */
 export const ContainerComp = (props: ContainerProps) => {
 
     return (<>
-        <Col s={props.s} md={props.md} className={props.clName}>
-            <Row className="title"><text className="title">{props.title}</text></Row>
+        <Col xs={props.xs} md={props.md} className={props.clName}>
+            <Row className="title"><h1 className="title">{props.title} </h1>
+                <h5 className="date">{props.date}</h5>
+            </Row>
             <Row>
-                <TruncateMarkup lines={15}>
-                    <text className="desc">{props.desc}</text>
-                </TruncateMarkup>
+                <div className="desc">
+                    <TextTruncate
+                    line={15}
+                    element="h2"
+                    truncateText="..."
+                    text={props.desc}
+                />
+                </div>
             </Row>
         </Col>
     </>
