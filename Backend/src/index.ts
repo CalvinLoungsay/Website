@@ -12,7 +12,7 @@ const app = express();
 const PORT: number = 5000;
 
 /* Url for the mongo db used for the backend */
-const MONGO_URL = "mongodb+srv://Calvin:Tester123@personalwebsite.poh4fzi.mongodb.net/Website?retryWrites=true&w=majority&appName=PersonalWebsite";
+const MONGO_URL = "";
 
 /* Enables Cors */
 app.use(cors({
