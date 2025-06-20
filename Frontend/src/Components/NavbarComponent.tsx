@@ -53,7 +53,6 @@ export function NavbarComp() {
                             }>
                                 <h5 className="navLinkItem">Login</h5>
                             </Nav.Link>
-
                         )}
                 </Nav>
             </Navbar.Collapse>

@@ -12,7 +12,7 @@ interface Todo {
 todo - Currently selected todo
 todoList - List of all todos in the list
 toggleCheck - Function that toggles whether or not its true or false using the id of the todo
-deleteTodo - Function that deletes a todo using the todo's id*/
+deleteTodo - Function that deletes a todo using the todo's id */
 interface TodoProps {
     todo: Todo
     todoList: Todo[]

@@ -14,12 +14,12 @@ export const isAuthenticated: RequestHandler = async (req: Request, res: Respons
         if (!sessionToken || !existingUser) {
             res.sendStatus(403);
             return;
-        /* Else merge user identifier with the request */
+            /* Else merge user identifier with the request */
         } else {
             merge(req, { identity: existingUser });
             next();
         }
-    /* Catch errors and log the error */
+        /* Catch errors and log the error */
     } catch (error) {
         console.log(error);
         res.sendStatus(400);
@@ -34,7 +34,7 @@ export const isOwner: RequestHandler = async (req: Request, res: Response, next:
         const { id } = req.params;
         /* Gets the current user id from the identity part of the request as specified in isAuthenticated*/
         const currentUserId: string = get(req, 'identity._id') as unknown as string
-        
+
         /* If current user id is not found in the request return an error */
         if (!currentUserId) {
             res.sendStatus(403);
@@ -48,7 +48,7 @@ export const isOwner: RequestHandler = async (req: Request, res: Response, next:
         }
 
         next();
-    /* Catch errors and log the error */
+        /* Catch errors and log the error */
     } catch (error) {
         console.log(error);
         res.sendStatus(400);

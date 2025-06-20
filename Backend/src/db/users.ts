@@ -13,8 +13,8 @@ const UserSchema =  new mongoose.Schema({
 /* Creates user model with the user schema */
 export const UserModel = mongoose.model('User',UserSchema);
 
-/* Gets all users in the user */
-export const getUsers = () => UserModel.find();
+/* Gets all users in the db */
+export const getUsers = (filter:{}) => UserModel.find(filter);
 /* Gets user by using email */
 export const getUserByEmail = (email: string) => UserModel.findOne({ email });
 /* Gets user by session token for use in verifying owner is sending the request */

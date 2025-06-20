@@ -23,16 +23,46 @@
 }
 
 .date {
-    font-size:.8rem;
-    margin-left:5px;
+    font-size: .8rem;
+    margin-left: 5px;
 }
 
-.desc h2 {
+.desc span {
+    font-size: .9rem;
     line-height: .8;
-    margin-bottom: 4px; /* Try different values */
-    padding-bottom:10px;
+    margin-bottom: 4px;
+    padding-bottom: 10px;
 }
 
+.title {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.title:hover {
+    color: rgb(63, 63, 63);
+    transition: color 0.1s ease;
+}
+
+/* News Details CSS */
+
+.adminBtn {
+    background-color: rgb(247, 165, 42);
+    border: 0px solid rgb(255, 153, 0);
+    padding: 5px 20px 5px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.titleEdit {
+    padding-right: 20px;
+    width: 65%;
+}
+
+.descEdit {
+    font-size: 1rem;
+    width: 99%;
+}
 
 /* Change Log CSS */
 
@@ -49,7 +79,7 @@
 
 .changeTitle {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
     border-bottom: 2px solid black;
     border-radius: 4px;
@@ -58,24 +88,21 @@
 .newChangeTitle {
     margin-left: 10px;
     margin-bottom: 0px;
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: 700;
     color: black;
 }
 
 .newChangeDesc {
     margin-left: 10px;
-    font-size: .8rem;
     max-height: 10%;
     padding: 5px;
 }
 
-.newChangeDesc h2 {
-    line-height: .8;
-    margin-bottom: 4px; /* Try different values */
-    padding-bottom:10px;
+.newChangeDesc span {
+    font-size: .85rem;
+    line-height: 1;
 }
-
 
 /* Medium Screen Size */
 @media (min-width:768px) and (max-width: 992px) {
@@ -99,10 +126,6 @@
         font-size: 1rem;
         font-weight: 700;
         color: black;
-    }
-
-    .newChangeDesc {
-        font-size: .8rem;
     }
 
     .changelogContainer {
@@ -135,11 +158,29 @@
         color: black;
     }
 
-    .newChangeDesc {
-        font-size: .7rem;
-    }
-
     .changelogContainer {
         padding: 5px 2px 0px 2px;
+    }
+
+    .adminBtn {
+        font-size: .9rem;
+        padding: 5px 15px 5px 15px;
+    }
+
+    .titleEdit {
+        width: 95%;
+    }
+
+    .descEdit {
+        font-size: .8rem;
+    }
+
+    .newChangeTitle {
+        font-size:.9rem;
+    }
+
+    .newChangeDesc span {
+        font-size: .75rem;
+        line-height: 1;
     }
 }

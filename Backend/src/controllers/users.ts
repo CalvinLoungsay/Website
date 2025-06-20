@@ -1,10 +1,11 @@
 import { RequestHandler, Request, Response } from 'express';
-import { deleteUserById, getUserById, getUsers, getUserByEmail } from '../db/users';
+import { deleteUserById, getUserById, getUsers, getUserByEmail, getUserBySessionToken } from '../db/users';
 
 /* Gets all user from the database */
 export const getAllUsers: RequestHandler = async (req: Request, res: Response) => {
     try {
-        const users = await getUsers();
+        /* Get all users from database except for admin account using special added role */
+        const users = await getUsers({ role: { $ne: "admin" } });
 
         res.status(200).json(users);
         /* Catch errors and log the error */
@@ -70,7 +71,50 @@ export const getUser = async (req: Request, res: Response) => {
 
         /* If user does not exist return an error */
         if (!user) {
-            res.status(400).json({message: "User not found"});
+            res.status(400).json({ message: "User not found" });
+            return;
+        }
+        res.status(200).json(user);
+        return;
+        /* Catch errors and log the error */
+    } catch (error) {
+        console.log(error);
+        res.sendStatus(400);
+        return;
+    }
+}
+
+/* Gets a single user by using their email */
+export const getUserWithId = async (req: Request, res: Response) => {
+    try {
+        /* Gets email from request params */
+        const { id } = req.params;
+        const user = await getUserById(id);
+
+        /* If user does not exist return an error */
+        if (!user) {
+            res.status(400).json({ message: "User not found" });
+            return;
+        }
+        res.status(200).json(user);
+        return;
+        /* Catch errors and log the error */
+    } catch (error) {
+        console.log(error);
+        res.sendStatus(400);
+        return;
+    }
+}
+
+export const getUserByToken = async (req: Request, res: Response) => {
+    try {
+        /* Gets email from request params */
+        const { sessionToken } = req.params;
+        const user = await getUserBySessionToken(sessionToken);
+
+        /* If user does not exist return an error */
+        if (!user) {
+            res.status(400).json({ message: "User not found" });
             return;
         }
         res.status(200).json(user);

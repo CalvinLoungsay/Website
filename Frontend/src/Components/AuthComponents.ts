@@ -13,12 +13,13 @@ export const checkLogin = (): boolean => {
 
     /* Cookie not found, user is not logged in */
     localStorage.removeItem("username");
+    localStorage.removeItem("id");
     return false;
 }
 
 /* Validates if the string is a valid email string */
 export const validateEmail = (email: string): boolean => {
-    //Uses Regex to check theres valid letters infront of the @ then valid letters behind it in front of the . and then checks letters behind the .
+    /* Uses Regex to check theres valid letters infront of the @ then valid letters behind it in front of the . and then checks letters behind the . */
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
@@ -26,8 +27,9 @@ export const validateEmail = (email: string): boolean => {
 /* Checks if a user exists by using their given email */
 export const checkExisting = async (emailGiven: string): Promise<boolean> => {
     try {
-        const response = await fetch('http://localhost:5000/users/' + emailGiven, {
-            method: 'POST',
+        /* Attempts to get user by email given, if found return error */
+        const response = await fetch('http://localhost:5000/users/email/' + emailGiven, {
+            method: 'GET',
             body: JSON.stringify({
                 email: emailGiven
             }),
@@ -55,6 +57,7 @@ export const checkExisting = async (emailGiven: string): Promise<boolean> => {
 /* Logs the user in with the given email and password */
 export const loginUser = async (loginEmail: string, loginPassword: string): Promise<boolean> => {
     try {
+        /* Sends a post request to login with given fields in json body */
         const response = await fetch('http://localhost:5000/auth/login', {
             method: 'POST',
             body: JSON.stringify({
@@ -74,6 +77,7 @@ export const loginUser = async (loginEmail: string, loginPassword: string): Prom
         /* Wait for the api to send back a response json to use to set up cookies */
         const data = await response.json();
 
+        /* Set cookies */
         setUserCookie(data);
         return true;
         /* Catch errors and log the error */
@@ -90,6 +94,7 @@ export const loginUser = async (loginEmail: string, loginPassword: string): Prom
 /* Registers a user with given email, password, and username */
 export const registerUser = async (regEmail: string, regPassword: string, regName: string): Promise<boolean> => {
     try {
+        /* Sends a post request to register a user with given values */
         const response = await fetch('http://localhost:5000/auth/register', {
             method: 'POST',
             body: JSON.stringify({
@@ -138,8 +143,9 @@ function setUserCookie(data: { _id: string, username: string, email: string, aut
 
     /* Sets users session token in login-auth cookie with expiration date of 1 week */
     document.cookie = `LOGIN-AUTH=${data.authentication.sessionToken}; path=/; Secure; SameSite=Strict; max-age=${expirationDate.toUTCString()}`;
-    /* Sets username in localstorage for easy grabbing instead of getting from api */
+    /* Sets username and id in localstorage for easy grabbing instead of getting from api */
     localStorage.setItem("username", data.username);
+    localStorage.setItem("id", data._id);
 }
 
 /* Signs out the user */
@@ -147,20 +153,64 @@ export const signout = (navigate: NavigateFunction): void => {
     /* Clears out the cookie */
     document.cookie = "LOGIN-AUTH=; path=/; Secure; SameSite=Strict; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
 
-    /* Clears stored username */
+    /* Clears stored username and id */
     localStorage.removeItem("username");
+    localStorage.removeItem("id");
 
     /* Redirect user */
     handleRedirect(navigate);
+    /* Force page refresh to properly show content that aren't available to not logged in users */
+    window.location.reload();
 };
 
 /* Redirects the user to the previous page */
 export function handleRedirect(navigate: NavigateFunction) {
-    /* Get previous page url from localstorage or set to '/' */
+    /* Get previous page url from localstorage or set to home url */
     let previousPage: string = localStorage.getItem("previousPage") ?? "/";
     /* If in pages that require an account to access instead redirect to home */
     if (previousPage === "/about") {
         previousPage = "/";
     }
-    navigate(previousPage);
+    console.log(previousPage);
+    if (previousPage === "/news/") {
+        navigate(previousPage, { replace: false });
+    } else {
+        navigate(previousPage, { replace: true });
+    }
 }
+
+/* Checks if the user logged in is admin */
+export const isAdmin = async (): Promise<boolean> => {
+    try {
+        const id = localStorage.getItem('id');
+        /* If Login auth does not exist */
+
+
+        /* Sends request to get the user via id */
+        const response = await fetch(`http://localhost:5000/users/${id}`, {
+            method: "GET",
+            credentials: 'include',
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+            },
+        });
+
+        if (!response.ok) {
+            return false;
+        }
+
+        const data = await response.json();
+        const role = data.role;
+
+        if (role != undefined) {
+            console.log("IS ADMIN");
+            return true;
+        } else {
+            console.log("IS NOT ADMIN");
+            return false
+        }
+    } catch (error) {
+        console.error("Admin check error:", error instanceof Error ? error.message : "Unknown error");
+        return false;
+    }
+};

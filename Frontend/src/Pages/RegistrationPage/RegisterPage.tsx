@@ -1,6 +1,6 @@
 import { Row, Col, Form, Button } from 'react-bootstrap';
 import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { validateEmail, checkExisting, registerUser, handleRedirect } from '../../Components/AuthComponents';
 import "../../CSS/AuthPage.css";
 

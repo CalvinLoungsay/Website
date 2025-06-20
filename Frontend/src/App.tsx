@@ -10,6 +10,7 @@ import { AboutPage } from './Pages/AboutPage/AboutPage'
 import { FooterComp } from './Components/FooterComponent'
 import { LoginPage } from './Pages/LoginPage/LoginPage'
 import { RegisterPage } from './Pages/RegistrationPage/RegisterPage'
+import { NewsDetailsPage } from './Pages/HomePage/NewsDetailsPage';
 
 
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
         <NavbarComp />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/news/:newsId" element = {<NewsDetailsPage/>}/>
           <Route path="/todoList" element={<TodoListPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/login" element={<LoginPage />} />
