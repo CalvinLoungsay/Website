@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import "../../CSS/Home.css"
 import TextTruncate from 'react-text-truncate'
 import { editNews } from '../../Components/NewsFunction';
-import { News } from './HomePage.tsx'
+import { News } from '../../Components/Interfaces.ts';
 import { useLocation, useParams } from 'react-router-dom';
 import { NotFoundPage } from '../NotFound/NotFoundPage.tsx';
 import { getSingleNews } from '../../Components/NewsFunction';
@@ -20,7 +20,7 @@ export const NewsDetailsPage = () => {
 
     /* Use States */
     const [newsItem, setNewsItem] = useState<News>(prevState?.news);
-    const [isAdminProp, setIsAdminProp] = useState<boolean>(prevState?.isAdminProp ?? false);
+    const [isAdminProp, setIsAdminProp] = useState<boolean>(prevState?.isAdmin ?? false);
     const [isEditing, setIsEditing] = useState<boolean>(false);
     const [title, setTitle] = useState<string>(prevState?.news?.title ?? '');
     const [desc, setDesc] = useState<string>(prevState?.news?.desc ?? '');
@@ -30,10 +30,10 @@ export const NewsDetailsPage = () => {
     /* If previous state does not exist and news id does get news data from api */
     useEffect(() => {
         if (!prevState && newsId) {
-            console.log(prevState);
             const fetchNewsItem = async () => {
                 const news = await getSingleNews(newsId);
                 const check = await isAdmin();
+                console.log(check);
                 if (check) {
                     setIsAdminProp(true);
                 }
@@ -41,14 +41,14 @@ export const NewsDetailsPage = () => {
             };
             fetchNewsItem();
         }
-    }, [newsId, prevState]);
+        console.log(prevState);
+    }, [newsId, prevState, newsItem]);
 
     /* If previous state exists get news data from previous state */
     useEffect(() => {
         if (newsItem) {
             setTitle(newsItem.title);
             setDesc(newsItem.desc);
-            setIsAdminProp(true);
         }
     }, [newsItem]);
 

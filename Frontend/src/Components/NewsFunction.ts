@@ -1,10 +1,4 @@
-interface News {
-    _id: string,
-    title: string,
-    desc: string,
-    createdAt: Date,
-    updatedAt: Date
-}
+import { News} from './Interfaces'
 
 /* Gets all news from the api */
 export const getNews = async (): Promise<News[]> => {

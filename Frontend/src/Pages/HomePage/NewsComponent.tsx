@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../../CSS/Home.css"
 import TextTruncate from 'react-text-truncate'
-import { News } from './HomePage.tsx'
+import { News } from '../../Components/Interfaces';
 
 /* Props form news page */
 interface ContainerProps {

@@ -63,9 +63,9 @@ export const register: RequestHandler = async (req: Request, res: Response, next
         }
 
         /* Tries and gets an existing user by given email */
-        const existingUser = await getUserByEmail(email);
+        const existingEmail = await getUserByEmail(email);
         /* If there is an existing user return an error */
-        if (existingUser) {
+        if (existingEmail) {
             res.sendStatus(400);
             return;
         }

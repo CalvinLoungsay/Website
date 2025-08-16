@@ -12,7 +12,7 @@ const app = express();
 const PORT: number = 5000;
 
 /* Url for the mongo db used for the backend */
-const MONGO_URL = "";
+const MONGO_URL = "DBLINK";
 
 /* Enables Cors */
 app.use(cors({

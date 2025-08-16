@@ -1,5 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import "../../CSS/About.css"
+import CalvinImage from '../../assets/Calvin.jpg';
 /* About page Component */
 export function AboutPage() {
     return (<>
@@ -9,6 +10,9 @@ export function AboutPage() {
                     <Container className="aboutContainer">
                         <h1></h1>
                         <h1 className="aboutTitle d-flex justify-content-center">About Me</h1>
+                        <Col className="d-flex justify-content-center">
+                            <img src={CalvinImage} className="selfImage"></img>
+                        </Col>
                         <h1 className="info d-flex justify-content-center">LinkedIn - https://www.linkedin.com/in/calvin-loungsay-5b16691b7</h1>
                         <h1 className="info d-flex justify-content-center">Github - https://github.com/CalvinLoungsay</h1>
                         <h1 className="info d-flex justify-content-center">Email - Calvin.Loungsay@gmail.com</h1>

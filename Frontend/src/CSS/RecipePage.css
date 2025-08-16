@@ -1,0 +1,68 @@
+.searchBar {
+    width: 60% !important;
+}
+
+.searchCol {
+    margin-bottom: 4%;
+}
+
+.createBtn {
+    margin:0 2% 5% 2%;
+}
+
+.createCol {
+    margin:0 2% 5% 2%;
+}
+
+.filteredRecipeContainer {
+    padding: 0% 0% 0% 3% !important;
+}
+
+/* Small Phones */
+@media (min-width: 320px) and (max-width: 549px) {
+    .createBtn {
+        margin-bottom: 1%;
+    }
+
+    .createCol {
+        margin-bottom: 1%;
+    }
+
+    .searchCol {
+        margin-bottom: 1%;
+    }
+}
+
+/* Ipads or small screen sizes */
+@media (min-width:550px) and (max-width: 767px) {
+    .createBtn {
+        margin-bottom: 1%;
+    }
+
+    .createCol {
+        margin-bottom: 1%;
+    }
+
+    .searchCol {
+        margin-bottom: 1%;
+    }
+}
+
+/* Medium Screen Size */
+@media (min-width:768px) and (max-width: 992px) {
+    .createBtn {
+        margin-bottom: 1%;
+    }
+
+    .createCol {
+        margin-bottom: 1%;
+    }
+
+    .searchCol {
+        margin-bottom: 1%;
+    }
+}
+
+
+/* Large Screen Size */
+@media (min-width: 993px) {}

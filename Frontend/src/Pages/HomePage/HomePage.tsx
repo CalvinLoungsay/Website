@@ -5,14 +5,7 @@ import "../../CSS/Home.css";
 import { useState, useEffect } from 'react';
 import { getNews } from '../../Components/NewsFunction';
 import { isAdmin } from '../../Components/AuthComponents';
-
-export interface News {
-    _id: string
-    title: string,
-    desc: string,
-    createdAt: Date,
-    updatedAt: Date
-}
+import { News } from '../../Components/Interfaces';
 
 /* Home/news page */
 export function HomePage() {

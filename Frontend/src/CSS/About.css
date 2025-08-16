@@ -20,6 +20,11 @@
     margin: 10px 0 10px 0;
 }
 
+.selfImage {
+    width:200px;
+    height:auto;
+}
+
 /* Ipads or small screen sizes */
 @media (min-width:481px) and (max-width: 767px) {
     .aboutTitle {

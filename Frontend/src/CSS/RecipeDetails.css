@@ -1,0 +1,212 @@
+.detailContainer {
+    background-color: white;
+    border-radius: 5px;
+    padding: 0px;
+    margin: 2% 10% 2% 10%;
+    padding: 1% 0 1% 0
+}
+
+.recipeT itle {
+    font-size: 1.4em;
+}
+
+.desc {
+    font-size: 1em;
+    padding: 0 5% .5% 5%;
+}
+
+.backBtn {
+    margin-left: 2%;
+}
+
+.recipeImg {
+    max-height: 500px;
+    max-width: 500px;
+    object-fit: cover;
+    align-self: center;
+    padding: 2% 5% 2% 5%;
+}
+
+.recipeContainer {
+    align-content: center;
+}
+
+.ingrContainer {
+    margin-left: 2%;
+}
+
+.ingrRowContainer {}
+
+.stepContainer {
+    padding: 5% 20% 4% 20%;
+}
+
+.stepList {
+    padding-left: 15%;
+}
+
+.commentBox {
+    margin: 1% 0% 1% 0%;
+    width: 100% !important;
+    height: 120px;
+    resize: none;
+}
+
+.ratingContainer {
+    margin: 1% 5% 1% 5%;
+}
+
+.ratingLabel {
+    font-size: 1.1rem;
+}
+
+.addCommentBtn {
+    margin-top: 2%;
+}
+
+.commentSection {
+    margin: 1% 2% 1% 2%;
+}
+
+.timeParagraph {
+    font-size: .8rem;
+}
+
+.backBtn {
+    padding: 8px 14px;
+    background-color: rgb(22, 152, 228);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.backBtn:hover {
+    background-color: rgb(25, 171, 255);
+}
+
+
+.editBtn {
+    padding: 8px 14px;
+    margin-right: 5%;
+    background-color: rgb(223, 174, 39);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.editBtn:hover {
+    background-color: rgb(255, 200, 48);
+}
+
+.deleteBtn {
+    padding: 8px 14px;
+    background-color: rgb(228, 58, 58);
+    margin-right: 5%;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.deleteBtn:hover {
+    background-color: rgb(243, 61, 61);
+}
+
+.recipeForm {
+    width: 100%;
+    padding: .5% 1% .5% 1;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    border-color: rgb(24, 101, 189);
+    border-radius: 6px;
+    text-align: center;
+}
+
+.nutritionForm {
+    width: 100%;
+    padding: .5% 1% .5% 1;
+    margin-bottom: 2%;
+    margin-bottom: 2%;
+    border-color: rgb(24, 101, 189);
+    border-radius: 6px;
+    text-align: center;
+}
+
+.formContainerString {
+    padding: 1% 15% 1% 15%;
+}
+
+.formTitle {
+    justify-content: center;
+}
+
+.titleContainer {
+    padding: 2% 15% 0% 15%;
+}
+
+/* Small Phones */
+@media (min-width: 320px) and (max-width: 549px) {
+    .recipeImg {
+        max-height: 300px;
+        max-width: 300px;
+    }
+
+    .stepContainer {
+        padding: 5% 10% 2% 10%;
+    }
+
+    .editBtn {
+        margin-right: 15%;
+    }
+
+    .deleteBtn {
+        margin-right: 15%;
+    }
+
+    .formTitle {
+        justify-content: center;
+    }
+
+    .nutritionForm {
+        margin-bottom: 4%;
+        margin-bottom: 4%;
+    }
+}
+
+/* Ipads or small screen sizes */
+@media (min-width:550px) and (max-width: 767px) {
+    .recipeImg {
+        max-height: 400px;
+        max-width: 400px;
+    }
+
+    .stepContainer {
+        padding: 5% 10% 2% 10% !important;
+    }
+
+    .editBtn {
+        margin-right: 15%;
+    }
+
+    .deleteBtn {
+        margin-right: 15%;
+    }
+
+}
+
+/* Medium Screen Size */
+@media (min-width:768px) and (max-width: 992px) {
+    .stepContainer {
+        padding: 5% 10% 2% 10% !important;
+    }
+
+}
+
+
+/* Large Screen Size */
+@media (min-width: 993px) {}

@@ -96,50 +96,10 @@
 }
 
 /* Small Phones */
-@media (min-width: 320px) and (max-width: 549px) {
-    .todoContainer {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    .todoName {
-        font-size: .9rem;
-    }
-
-    @media (max-width:420px) {
-        .addBtn {
-            margin-top: 25px;
-        }
-
-        .addBtnText {
-            font-size: 1.3rem;
-        }
-
-        .todoName {
-            font-size: .75rem;
-        }
-
-        .deleteText {
-            font-size: .55rem;
-        }
-    }
-}
+@media (min-width: 320px) and (max-width: 549px) {}
 
 /* Ipads or small screen sizes */
-@media (min-width:550px) and (max-width: 767px) {
-    .todoContainer {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    .todoName {
-        font-size: .8rem;
-    }
-
-    .deleteText {
-        font-size: .55rem;
-    }
-}
+@media (min-width:550px) and (max-width: 767px) {}
 
 /* Medium Screen Size */
 @media (min-width:768px) and (max-width: 992px) {}

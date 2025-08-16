@@ -64,10 +64,10 @@ export function RegisterPage() {
             }
             return;
         }
-
         /* Checks if the user already exists in the database */
         const userExists = await checkExisting(email);
         if (userExists) {
+            console.log(userExists)
             const errorElement = document.getElementById("errorMessage");
             if (errorElement) {
                 errorElement.textContent = "Email has an account associated with it already";
@@ -87,10 +87,10 @@ export function RegisterPage() {
         if (success) {
             handleRedirect(navigate);
         } else {
-
+            console.log(success);
             const errorElement = document.getElementById("errorMessage");
             if (errorElement) {
-                errorElement.textContent = "Error with registering";
+                errorElement.textContent = "Error with Registering, Username may be taken";
                 /* Do a shake animation to show user's login failed */
                 errorElement.classList.add("shake");
 

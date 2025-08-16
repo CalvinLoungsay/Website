@@ -1,0 +1,38 @@
+.entryRow {
+    margin: 1% 5% 0% 5%;
+    padding-left: 5%;
+}
+
+.backBtn {
+    padding: 4px 10px;
+    background-color: rgb(22, 152, 228);
+    margin-top:2%;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.backBtn:hover {
+    background-color: rgb(25, 171, 255);
+}
+
+.createContainer {
+    border-radius:4px;
+    border:silver;
+    background-color:rgb(255, 255, 255);
+    margin:2% 5% 2% 5%;
+    padding:0% 3% 0% 3%;
+}
+
+.addNutrRow {
+    margin:0 0 3% 0;
+}
+
+.finishContainer {
+
+}
+.finishBtn {
+    margin:1% 0 3% 0;
+}

@@ -1,0 +1,39 @@
+.recipeContainer {
+    margin: 1% 1% 1% 1%;
+    background-color: rgb(201, 201, 201);
+    border-radius: 10px;
+}
+
+.recipeTitle {
+    font-size: 1.4rem;
+    padding-left: 1%;
+    font-weight:700;
+}
+
+.recipeDesc {
+    font-size: 1rem;
+    padding-left: 1%;
+}
+
+.recipeLink {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Small Phones */
+@media (min-width: 320px) and (max-width: 549px) {
+
+}
+
+/* Ipads or small screen sizes */
+@media (min-width:550px) and (max-width: 767px) {
+
+}
+
+/* Medium Screen Size */
+@media (min-width:768px) and (max-width: 992px) {}
+
+
+/* Large Screen Size */
+@media (min-width: 993px) {}

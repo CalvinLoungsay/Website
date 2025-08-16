@@ -37,6 +37,9 @@ export function NavbarComp() {
                     <Nav.Link onClick={() => navClick("/about")}>
                         <h5 className="navLinkItem">About</h5>
                     </Nav.Link>
+                    <Nav.Link onClick={() => navClick("/recipe")}>
+                        <h5 className="navLinkItem">Recipe App</h5>
+                    </Nav.Link>
 
                     {/* if user is logged in show signout */
                         isLoggedIn && (

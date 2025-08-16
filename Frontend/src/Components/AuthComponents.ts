@@ -25,14 +25,12 @@ export const validateEmail = (email: string): boolean => {
 }
 
 /* Checks if a user exists by using their given email */
+// Change to return string use string compare check username then if not taken check email given
 export const checkExisting = async (emailGiven: string): Promise<boolean> => {
     try {
         /* Attempts to get user by email given, if found return error */
         const response = await fetch('http://localhost:5000/users/email/' + emailGiven, {
             method: 'GET',
-            body: JSON.stringify({
-                email: emailGiven
-            }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
@@ -40,12 +38,14 @@ export const checkExisting = async (emailGiven: string): Promise<boolean> => {
 
         /* If response is ok then a user exists and we dont want that for register */
         if (response.ok) {
+            console.log(response);
             throw new Error(`Email has an existing User`);
         }
         return false;
         /* Catch errors and log the error */
     } catch (error) {
         if (error instanceof Error) {
+            console.log(error);
             console.error("Email has an existing User");
         } else {
             console.error("An unknown error occurred.");
@@ -106,6 +106,7 @@ export const registerUser = async (regEmail: string, regPassword: string, regNam
                 'Content-type': 'application/json; charset=UTF-8',
             },
         });
+        console.log(response);
         /* If reponse is not ok then return an error */
         if (!response.ok) {
             throw new Error(`Status: ${response.status}`);
@@ -184,7 +185,9 @@ export const isAdmin = async (): Promise<boolean> => {
     try {
         const id = localStorage.getItem('id');
         /* If Login auth does not exist */
-
+        if (!id) {
+            return false
+        }
 
         /* Sends request to get the user via id */
         const response = await fetch(`http://localhost:5000/users/${id}`, {
@@ -211,6 +214,47 @@ export const isAdmin = async (): Promise<boolean> => {
         }
     } catch (error) {
         console.error("Admin check error:", error instanceof Error ? error.message : "Unknown error");
+        return false;
+    }
+};
+
+export const isOwner = async (checkUser: string): Promise<boolean> => {
+    try {
+
+        const cookieName = 'LOGIN-AUTH'; // cookie name
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${cookieName}=`);
+        const id = localStorage.getItem('id');
+        const username = localStorage.getItem('username');
+
+        console.log(id);
+        console.log(parts[1]);
+
+        const response = await fetch(`http://localhost:5000/users/session/${parts[1]}`, {
+            method: "GET",
+            credentials: 'include',
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+            },
+        });
+        if (response) {
+            const data = await response.json();
+            if (data._id == id && username == data.username && data.username == checkUser)   {
+                console.log("found");
+                return true;
+            }
+            return false;
+        }
+
+        /* Cookie not found, user is not logged in */
+        localStorage.removeItem("username");
+        localStorage.removeItem("id");
+
+        /* If Login auth does not exist */
+        return false
+
+    } catch (error) {
+        console.error("Error with checking if is owner of account");
         return false;
     }
 };
