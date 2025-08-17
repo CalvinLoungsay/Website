@@ -2,8 +2,7 @@ import { Row, Col } from 'react-bootstrap'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../../CSS/Home.css"
-import TextTruncate from 'react-text-truncate'
-import { News } from '../../Components/Interfaces';
+import type { News } from '../../Components/Interfaces';
 
 /* Props form news page */
 interface ContainerProps {
@@ -54,12 +53,7 @@ export const NewsComp = (props: ContainerProps) => {
                 {/* Description */}
                 <Row>
                     <div className="desc">
-                        <TextTruncate
-                            line={15}
-                            element="span"
-                            truncateText="..."
-                            text={desc}
-                        />
+                        <span>{desc}</span>
                     </div>
                 </Row>
             </Col>

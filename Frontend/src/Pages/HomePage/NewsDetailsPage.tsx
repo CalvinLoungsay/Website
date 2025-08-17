@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import "../../CSS/Home.css"
 import TextTruncate from 'react-text-truncate'
 import { editNews } from '../../Components/NewsFunction';
-import { News } from '../../Components/Interfaces.ts';
+import type { News } from '../../Components/Interfaces.ts';
 import { useLocation, useParams } from 'react-router-dom';
 import { NotFoundPage } from '../NotFound/NotFoundPage.tsx';
 import { getSingleNews } from '../../Components/NewsFunction';
