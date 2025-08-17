@@ -1,7 +1,6 @@
 import { Row, Col, Button, Container, Form } from 'react-bootstrap'
 import { useState, useEffect } from 'react';
 import "../../CSS/Home.css"
-import TextTruncate from 'react-text-truncate'
 import { editNews } from '../../Components/NewsFunction';
 import type { News } from '../../Components/Interfaces.ts';
 import { useLocation, useParams } from 'react-router-dom';
@@ -108,12 +107,7 @@ export const NewsDetailsPage = () => {
                 <Row>
                     <div className="desc">
                         {!isEditing ? (
-                            <TextTruncate
-                                line={15}
-                                element="span"
-                                truncateText="..."
-                                text={desc}
-                            />
+                            <span>{desc}</span>
                         ) : (
                             <Form.Control
                                 as="textarea"
