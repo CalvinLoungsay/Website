@@ -29,7 +29,7 @@ export const validateEmail = (email: string): boolean => {
 export const checkExisting = async (emailGiven: string): Promise<boolean> => {
     try {
         /* Attempts to get user by email given, if found return error */
-        const response = await fetch('http://localhost:5000/users/email/' + emailGiven, {
+        const response = await fetch('https://website-4dw5.onrender.com/users/email/' + emailGiven, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -58,7 +58,7 @@ export const checkExisting = async (emailGiven: string): Promise<boolean> => {
 export const loginUser = async (loginEmail: string, loginPassword: string): Promise<boolean> => {
     try {
         /* Sends a post request to login with given fields in json body */
-        const response = await fetch('http://localhost:5000/auth/login', {
+        const response = await fetch('https://website-4dw5.onrender.com/auth/login', {
             method: 'POST',
             body: JSON.stringify({
                 email: loginEmail,
@@ -95,7 +95,7 @@ export const loginUser = async (loginEmail: string, loginPassword: string): Prom
 export const registerUser = async (regEmail: string, regPassword: string, regName: string): Promise<boolean> => {
     try {
         /* Sends a post request to register a user with given values */
-        const response = await fetch('http://localhost:5000/auth/register', {
+        const response = await fetch('https://website-4dw5.onrender.com/auth/register', {
             method: 'POST',
             body: JSON.stringify({
                 email: regEmail,
@@ -190,7 +190,7 @@ export const isAdmin = async (): Promise<boolean> => {
         }
 
         /* Sends request to get the user via id */
-        const response = await fetch(`http://localhost:5000/users/${id}`, {
+        const response = await fetch(`https://website-4dw5.onrender.com/users/${id}`, {
             method: "GET",
             credentials: 'include',
             headers: {
@@ -230,7 +230,7 @@ export const isOwner = async (checkUser: string): Promise<boolean> => {
         console.log(id);
         console.log(parts[1]);
 
-        const response = await fetch(`http://localhost:5000/users/session/${parts[1]}`, {
+        const response = await fetch(`https://website-4dw5.onrender.com/users/session/${parts[1]}`, {
             method: "GET",
             credentials: 'include',
             headers: {

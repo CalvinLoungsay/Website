@@ -9,7 +9,7 @@ import router from './router';
 
 /* Express app and port to be used for hosting on localhost */
 const app = express();
-const PORT: number = 5000;
+const PORT: number = Number(process.env.PORT) || 5000;
 
 /* Url for the mongo db used for the backend */
 const MONGO_URL = "DBLINK";

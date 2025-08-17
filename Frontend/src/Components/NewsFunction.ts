@@ -4,7 +4,7 @@ import { News} from './Interfaces'
 export const getNews = async (): Promise<News[]> => {
     try {
         /* Gets all the news from api */
-        const response = await fetch('http://localhost:5000/news/', {
+        const response = await fetch('https://website-4dw5.onrender.com/news/', {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -29,7 +29,7 @@ export const getNews = async (): Promise<News[]> => {
 export const getSingleNews = async (id: string): Promise<News> => {
     try {
         /* Gets news with the given id */
-        const response = await fetch('http://localhost:5000/news/' + id, {
+        const response = await fetch('https://website-4dw5.onrender.com/news/' + id, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -61,7 +61,7 @@ export const getSingleNews = async (id: string): Promise<News> => {
 export const editNews = async (newTitle: string, newDesc: string, id: string): Promise<void> => {
     try {
         /* Sends a PATCH request to api with given id */
-        const response = await fetch('http://localhost:5000/news/' + id, {
+        const response = await fetch('https://website-4dw5.onrender.com/news/' + id, {
             method: 'PATCH',
             body: JSON.stringify({
                 title: newTitle,

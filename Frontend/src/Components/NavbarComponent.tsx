@@ -30,12 +30,12 @@ export function NavbarComp() {
                     }>
                         <h5 className="navLinkItem">Home</h5>
                     </Nav.Link>
+                    <Nav.Link onClick={() => navClick("/about")}>
+                        <h5 className="navLinkItem">About</h5>
+                    </Nav.Link>
                     <Nav.Link onClick={() => navClick("/todoList")
                     }>
                         <h5 className="navLinkItem">Todo List</h5>
-                    </Nav.Link>
-                    <Nav.Link onClick={() => navClick("/about")}>
-                        <h5 className="navLinkItem">About</h5>
                     </Nav.Link>
                     <Nav.Link onClick={() => navClick("/recipe")}>
                         <h5 className="navLinkItem">Recipe App</h5>

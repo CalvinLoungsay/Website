@@ -4,7 +4,7 @@ import { Recipe } from "./Interfaces";
 export const getRecipes = async (): Promise<Recipe[]> => {
     try {
         /* Gets all the recipes from api */
-        const response = await fetch('http://localhost:5000/recipe', {
+        const response = await fetch('https://website-4dw5.onrender.com/recipe', {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -29,7 +29,7 @@ export const createRecipe = async (title: string, author:string, imgData:string,
     , steps: string[]): Promise<Boolean> => {
     try {
         /* Creates a recipe */
-        const response = await fetch('http://localhost:5000/recipe/', {
+        const response = await fetch('https://website-4dw5.onrender.com/recipe/', {
             method: 'POST',
             body: JSON.stringify({
                 title: title,
@@ -66,7 +66,7 @@ export const editRecipe = async (title: string, author:string, imgData:string,co
     , steps: string[], _id:string): Promise<Boolean> => {
     try {
         /* Edits a recipe from the api */
-        const response = await fetch('http://localhost:5000/recipe/' + _id, {
+        const response = await fetch('https://website-4dw5.onrender.com/recipe/' + _id, {
             method: 'PATCH',
             body: JSON.stringify({
                 title: title,
@@ -101,7 +101,7 @@ export const editRecipe = async (title: string, author:string, imgData:string,co
 export const deleteRecipe = async (id: string): Promise<Boolean> => {
     try {
         /* Delete recipe from api */
-        const response = await fetch('http://localhost:5000/recipe/' + id, {
+        const response = await fetch('https://website-4dw5.onrender.com/recipe/' + id, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
