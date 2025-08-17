@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
     "build": "tsc",
-    "prestart": "chmod +x node_modules/.bin/ts-node-dev",
+    "prestart": "chmod a+x node_modules/.bin/ts-node-dev",
     "start": "npx ts-node-dev src/index.ts"
   },
   "keywords": [],
