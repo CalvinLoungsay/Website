@@ -1,7 +1,7 @@
-import { Dispatch, SetStateAction } from 'react'
+import type { Dispatch, SetStateAction } from 'react'
 import { Col } from "react-bootstrap"
 import '../../CSS/RecipeContainer.css'
-import { Recipe } from '../../Components/Interfaces'
+import type { Recipe } from '../../Components/Interfaces'
 import notFoundImage from '../../assets/NotFound.jpg';
 
 

@@ -1,11 +1,10 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { NewsComp } from './NewsComponent';
-import TextTruncate from 'react-text-truncate';
 import "../../CSS/Home.css";
 import { useState, useEffect } from 'react';
 import { getNews } from '../../Components/NewsFunction';
 import { isAdmin } from '../../Components/AuthComponents';
-import { News } from '../../Components/Interfaces';
+import type { News } from '../../Components/Interfaces';
 
 /* Home/news page */
 export function HomePage() {
@@ -59,12 +58,7 @@ export function HomePage() {
                             <h1 className="newChangeTitle">Initial release of website</h1>
                             <p className="newChangeTitle">17th August, 2025</p>
                             <div className="newChangeDesc">
-                                <TextTruncate
-                                    line={5}
-                                    element="p"
-                                    truncateText="..."
-                                    text="Recipe App added, hosting, and testing."
-                                />
+                                <p>"Recipe App added, hosting, and testing."</p>
                             </div>
 
                         </div>

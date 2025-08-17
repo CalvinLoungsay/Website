@@ -1,4 +1,4 @@
-import { Recipe } from "./Interfaces";
+import type { Recipe } from "./Interfaces";
 
 /* Gets all recipes from the api */
 export const getRecipes = async (): Promise<Recipe[]> => {

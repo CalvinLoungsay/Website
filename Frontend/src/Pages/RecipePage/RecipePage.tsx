@@ -5,7 +5,7 @@ import { RecipeContainer } from './RecipeComp'
 import { RecipeDetails } from './RecipeDetails'
 import '../../CSS/RecipePage.css'
 import { getRecipes } from '../../Components/RecipeComponent'
-import { Recipe } from '../../Components/Interfaces'
+import type { Recipe } from '../../Components/Interfaces'
 
 export function RecipePage() {
     const [recipes, setRecipes] = useState<Recipe[]>([]);

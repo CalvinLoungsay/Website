@@ -1,4 +1,4 @@
-import { News} from './Interfaces'
+import type { News} from './Interfaces'
 
 /* Gets all news from the api */
 export const getNews = async (): Promise<News[]> => {

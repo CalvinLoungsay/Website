@@ -1,5 +1,5 @@
 import { ListGroup } from 'react-bootstrap'
-import { Comment } from '../../Components/Interfaces'
+import type { Comment } from '../../Components/Interfaces'
 import { RenderStars } from "../../Components/ReviewUtilities"
 import { FormatTimeAgo } from '../../Components/ReviewUtilities'
 import "../../CSS/TodoList.css"
