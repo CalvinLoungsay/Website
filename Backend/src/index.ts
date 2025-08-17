@@ -50,3 +50,5 @@ server.listen(PORT, () => {
 
 /* Mount router with other paths */
 app.use('/', router());
+
+export default app;
