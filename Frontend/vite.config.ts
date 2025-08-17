@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     outDir: 'build',
   },
-  base: "/website",
+  base: process.env.VITE_BASE_PATH || "/Website",
   server: {
     proxy: {
       '/api': 'http://localhost:5000'
