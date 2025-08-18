@@ -33,6 +33,11 @@ export function NavbarComp() {
                     <Nav.Link onClick={() => navClick("/about")}>
                         <h5 className="navLinkItem">About</h5>
                     </Nav.Link>
+                    <Nav.Link>
+                        <a href="https://website-4dw5.onrender.com/" target="_blank" rel="noopener noreferrer">
+                            <h5 className="navLinkItem">API</h5>
+                        </a>
+                    </Nav.Link>
                     <Nav.Link onClick={() => navClick("/todoList")
                     }>
                         <h5 className="navLinkItem">Todo List</h5>

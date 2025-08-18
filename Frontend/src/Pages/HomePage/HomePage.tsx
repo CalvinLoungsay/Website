@@ -58,7 +58,7 @@ export function HomePage() {
                             <h1 className="newChangeTitle">Initial release of website</h1>
                             <p className="newChangeTitle">17th August, 2025</p>
                             <div className="newChangeDesc">
-                                <p>"Recipe App added, hosting, and testing."</p>
+                                <p>Recipe App added, hosting, and testing. Please visit https://website-4dw5.onrender.com/ if no news is seen.</p>
                             </div>
 
                         </div>
